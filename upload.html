@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upload for Review | Corporate Saving Solutions</title>
+  <meta name="description" content="Securely prepare documents for a commercial review by Corporate Saving Solutions." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="upload-page">
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="https://cssuk.co.uk/wp-content/uploads/2024/11/Capture-e1727956403938.png" alt="Corporate Saving Solutions" /></a>
+    <nav><a href="index.html#solutions">What we do</a><a href="index.html#about">About CSS</a><a href="index.html#contact">Contact</a><a class="btn btn-small" href="index.html">Back to site</a></nav>
+  </header>
+  <main>
+    <section class="upload-hero">
+      <div class="wrap upload-wrap">
+        <div>
+          <p class="eyebrow">Upload for review</p>
+          <h1>Send us what you have.<br><span>We’ll organise the rest.</span></h1>
+          <p class="lead">Invoices, contracts, statements, renewal notices and schedules are all useful. There’s no need to sort or rename documents first.</p>
+          <div class="security-note">✓ Files will be securely stored against your company once the CSS back office is connected.</div>
+        </div>
+        <form class="upload-card" onsubmit="event.preventDefault();document.getElementById('demo-note').hidden=false;">
+          <h2>Company details</h2>
+          <label>Company<input required placeholder="Company name"></label>
+          <div class="form-row"><label>Your name<input required placeholder="Full name"></label><label>Work email<input required type="email" placeholder="name@company.co.uk"></label></div>
+          <label>Telephone<input placeholder="Optional"></label>
+          <label>What would you like us to review?<select><option>Multiple services / general review</option><option>Energy & utilities</option><option>Technology & payments</option><option>Finance & currency</option><option>Property & tax</option><option>Business operations</option></select></label>
+          <label class="file-drop">Add documents<input type="file" multiple><span>Choose files or drag them here</span><small>PDF, Excel, Word and common image formats</small></label>
+          <label>Anything we should know?<textarea rows="4" placeholder="Optional"></textarea></label>
+          <button class="btn" type="submit">Send to CSS</button>
+          <p id="demo-note" class="demo-note" hidden>Upload interface ready. Submission storage will be activated when the new Supabase project is connected.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap legal">© 2026 Corporate Saving Solutions Ltd · Company No. 14114087</div></footer>
+</body>
+</html>
