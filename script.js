@@ -3,7 +3,7 @@ refreshStyles.rel='stylesheet';
 refreshStyles.href='refresh.css';
 document.head.appendChild(refreshStyles);
 
-const cssLogo='https://raw.githubusercontent.com/jfielderon/CSS-UK/main/public/css-logo.png';
+const cssLogo='https://raw.githubusercontent.com/jfielderon/CSS-UK/main/public/css-logo.png?v=2';
 document.querySelectorAll('.brand img').forEach(img=>{img.src=cssLogo;img.alt='Corporate Saving Solutions';});
 document.querySelectorAll('.footer-brand img').forEach(img=>img.remove());
 const toggle=document.querySelector('.nav-toggle');
