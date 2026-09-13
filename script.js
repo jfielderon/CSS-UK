@@ -1,12 +1,6 @@
-const refreshStyles=document.createElement('link');
-refreshStyles.rel='stylesheet';
-refreshStyles.href='refresh.css';
-document.head.appendChild(refreshStyles);
-
-const cssLogo='https://raw.githubusercontent.com/jfielderon/CSS-UK/main/public/css-logo.png?v=2';
-document.querySelectorAll('.brand img').forEach(img=>{img.src=cssLogo;img.alt='Corporate Saving Solutions';});
+document.querySelectorAll('.brand img').forEach(img=>{img.src='public/css-logo.png?v=5';img.alt='Corporate Saving Solutions';});
 document.querySelectorAll('.footer-brand img').forEach(img=>img.remove());
 const toggle=document.querySelector('.nav-toggle');
 if(toggle){toggle.addEventListener('click',()=>{document.body.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',document.body.classList.contains('menu-open')?'true':'false');});}
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('in-view');}),{threshold:.12});
-document.querySelectorAll('.service-tile,.service-card,.section-intro-row,.statement-grid,.image-story-copy,.conversion-grid').forEach(el=>observer.observe(el));
+document.querySelectorAll('.service-tile,.service-card,.section-intro-row,.statement-grid,.experience-grid,.conversion-grid').forEach(el=>observer.observe(el));
