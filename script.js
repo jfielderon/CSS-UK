@@ -1,3 +1,8 @@
+const brandStyles = document.createElement('link');
+brandStyles.rel = 'stylesheet';
+brandStyles.href = 'brand.css';
+document.head.appendChild(brandStyles);
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('in-view');
