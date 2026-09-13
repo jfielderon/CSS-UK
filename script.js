@@ -3,6 +3,12 @@ brandStyles.rel = 'stylesheet';
 brandStyles.href = 'brand.css';
 document.head.appendChild(brandStyles);
 
+// Use the updated CSS crest/logo from this project rather than the legacy WordPress asset.
+document.querySelectorAll('.brand img,.footer-brand img').forEach(img => {
+  img.src = 'public/css-logo.png';
+  img.alt = 'Corporate Saving Solutions';
+});
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('in-view');
