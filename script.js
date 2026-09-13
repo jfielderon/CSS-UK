@@ -10,13 +10,19 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: .12 });
 document.querySelectorAll('.service-card,.section-head,.founder-grid,.review-grid').forEach(el => observer.observe(el));
 
+// Keep the top of the site focused on selling CSS first. Conversion actions appear later in-page.
+document.querySelectorAll('.site-header nav a').forEach(link => {
+  const text = link.textContent.trim().toLowerCase();
+  if (text === 'upload' || text === 'talk to css') link.remove();
+});
+document.querySelectorAll('.hero .hero-actions').forEach(actions => actions.remove());
+
 // Keep navigation consistent across the static site while the CRM/backend is still separate.
 document.querySelectorAll('.site-header nav a, footer a').forEach(link => {
   const text = link.textContent.trim().toLowerCase();
   if (text === 'what we do') link.setAttribute('href','what-we-do.html');
   if (text === 'about css') link.setAttribute('href','about.html');
   if (text === 'contact') link.setAttribute('href','contact.html');
-  if (text === 'talk to css') link.setAttribute('href','contact.html');
 });
 
 const serviceRoutes = {
