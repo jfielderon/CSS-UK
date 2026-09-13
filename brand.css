@@ -1,0 +1,36 @@
+:root{--navy:#063b72;--navy2:#022d59;--blue:#005baa;--aqua:#24b5c8;--mint:#71d3c4;--ink:#10263d;--muted:#5d7186;--line:#d6e2ec;--paper:#f5f8fb;--shadow:0 22px 60px rgba(3,48,91,.12)}
+.site-header{border-bottom:2px solid var(--blue);box-shadow:0 8px 28px rgba(3,48,91,.06)}
+.site-header nav>a:not(.btn):hover{color:var(--blue)}
+.btn{background:var(--blue);box-shadow:none;border-radius:10px}
+.btn:hover{background:#004b8d}
+.hero{background:radial-gradient(circle at 88% 15%,rgba(36,181,200,.18),transparent 26%),linear-gradient(125deg,var(--navy2) 0%,var(--navy) 58%,#07518f 100%)}
+.hero-orb-a{background:radial-gradient(circle,rgba(36,181,200,.52),transparent 70%)}
+.hero-orb-b{background:radial-gradient(circle,rgba(113,211,196,.35),transparent 70%)}
+.hero .eyebrow{color:#8edfe2}
+.hero h1 span{color:#fff}
+.hero .lead{color:#e1ebf4}
+.hero-card{border-radius:16px;box-shadow:0 20px 55px rgba(0,31,64,.20)}
+.hero-card-top,.signal b{color:var(--blue)}
+.trust-strip{background:var(--blue)}
+.trust-grid span{color:#deebf6}
+#solutions{background:linear-gradient(180deg,#fff 0%,#f5f8fb 100%)}
+.service-card{border-color:#d8e3ed;border-radius:14px;box-shadow:0 8px 24px rgba(3,48,91,.045)}
+.service-card:before{height:4px;background:var(--blue)}
+.service-card:nth-child(2),.service-card:nth-child(3),.service-card:nth-child(4),.service-card.wide{background:#fff}
+.service-card.featured{background:var(--navy);}
+.service-card .icon{border-radius:10px;background:#edf4fa;color:var(--blue)}
+.service-card.featured .icon{color:#fff;background:rgba(255,255,255,.12)}
+.dark{background:linear-gradient(120deg,var(--navy2),var(--navy));}
+.eyebrow.light{color:#94dce3}
+.founder{background:#f5f8fb}
+.founder-mark{border-radius:16px;background:var(--blue);color:#fff;box-shadow:none}
+.review-band{background:var(--blue)}
+.review-band .eyebrow{color:#d8f2f3}
+.contact{background:#fff}
+.contact-form,.upload-card{border-radius:14px;border-top:4px solid var(--blue);box-shadow:0 14px 40px rgba(3,48,91,.08)}
+.contact-form input,.contact-form textarea,.upload-card input,.upload-card textarea,.upload-card select{border-radius:8px;background:#fff}
+footer{background:var(--navy2);border-top:4px solid var(--blue)}
+.upload-hero{background:linear-gradient(135deg,#f7f9fc,#edf3f8)}
+.security-note{border-left-color:var(--blue)}
+.file-drop{background:#f8fbfd;border-color:#9fb9ce}
+@media(max-width:600px){.btn{border-radius:9px}.hero-card,.service-card,.contact-form,.upload-card{border-radius:12px}}
