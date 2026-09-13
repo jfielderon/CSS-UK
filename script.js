@@ -1,46 +1,5 @@
-const brandStyles = document.createElement('link');
-brandStyles.rel = 'stylesheet';
-brandStyles.href = 'brand.css';
-document.head.appendChild(brandStyles);
-
-// Use the updated CSS crest/logo from this project rather than the legacy WordPress asset.
-document.querySelectorAll('.brand img,.footer-brand img').forEach(img => {
-  img.src = 'public/css-logo.png';
-  img.alt = 'Corporate Saving Solutions';
-});
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('in-view');
-  });
-}, { threshold: .12 });
-document.querySelectorAll('.service-card,.section-head,.founder-grid,.review-grid').forEach(el => observer.observe(el));
-
-// Keep the top of the site focused on selling CSS first. Conversion actions appear later in-page.
-document.querySelectorAll('.site-header nav a').forEach(link => {
-  const text = link.textContent.trim().toLowerCase();
-  if (text === 'upload' || text === 'talk to css') link.remove();
-});
-document.querySelectorAll('.hero .hero-actions').forEach(actions => actions.remove());
-
-// Keep navigation consistent across the static site while the CRM/backend is still separate.
-document.querySelectorAll('.site-header nav a, footer a').forEach(link => {
-  const text = link.textContent.trim().toLowerCase();
-  if (text === 'what we do') link.setAttribute('href','what-we-do.html');
-  if (text === 'about css') link.setAttribute('href','about.html');
-  if (text === 'contact') link.setAttribute('href','contact.html');
-});
-
-const serviceRoutes = {
-  'energy & utilities':'energy-utilities.html',
-  'technology & payments':'technology-payments.html',
-  'finance & currency':'finance-currency.html',
-  'property & tax':'property-tax.html',
-  'business operations':'business-operations.html'
-};
-document.querySelectorAll('.service-card').forEach(card => {
-  const title = card.querySelector('h3')?.textContent.trim().toLowerCase();
-  const target = serviceRoutes[title];
-  const link = card.querySelector('a');
-  if (target && link) link.setAttribute('href',target);
-});
+const logoData='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFCmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4KPHg6eG1wbWV0YSB4bWxuczp4PSdhZG9iZTpuczptZXRhLyc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpBdHRyaWI9J2h0dHA6Ly9ucy5hdHRyaWJ1dGlvbi5jb20vYWRzLzEuMC8nPgogIDxBdHRyaWI6QWRzPgogICA8cmRmOlNlcT4KICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0nUmVzb3VyY2UnPgogICAgIDxBdHRyaWI6Q3JlYXRlZD4yMDI1LTAzLTIxPC9BdHRyaWI6Q3JlYXRlZD4KICAgICA8QXR0cmliOkV4dElkPmVkM2MyMzkxLTc2ZTktNGM5NC1iNzZmLWQ0ZmNiZTc3NDkxMjwvQXR0cmliOkV4dElkPgogICAgIDxBdHRyaWI6RmJJZD41MjUyNjU5MTQxNzk1ODA8L0F0dHJpYjpGYklkPgogICAgIDxBdHRyaWI6VG91Y2hUeXBlPjI8L0F0dHJpYjpUb3VjaFR5cGU+CiAgICA8L3JkZjpsaT4KICAgPC9yZGY6U2VxPgogIDwvQXR0cmliOkFkcz4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6ZGM9J2h0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvJz4KICA8ZGM6dGl0bGU+CiAgIDxyZGY6QWx0PgogICAgPHJkZjpsaSB4bWw6bGFuZz0neC1kZWZhdWx0Jz5CbHVlIEFic3RyYWN0IENpcmNsZSBHbG9iYWwgVGVjaCBMb2dvIC0gMjVTZXAyNDI0IFNpbW9uIFBybyBVcGxvYWQgPC9yZGY6bGk+CiAgIDwvcmRmOkFsdD4KICA8L2RjOnRpdGxlPgogPC9yZGY6RGVzY3JpcHRpb24+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczp4bXA9J2h0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8nPgogIDx4bXA6Q3JlYXRvclRvb2w+Q2FudmEgKFJlbmRlcmVyKSBkb2M9REFHaEN5QzhZUFFJIHVzZXI9VUFFMXMxek9lU1UgYnJhbmQ9bGlsEeKAmXMgVGVhbSB0ZW1wbGF0ZT1CbHVlIEFic3RyYWN0IENpcmNsZSBHbG9iYWwgVGVjaCBMb2dvPC94bXA6Q3JlYXRvclRvb2w+CiA8L3JkZjpEZXNjcmlwdGlvbj4KPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0ncic/PsQKEu0AAGSvSURBVHic7NkxaxRRGELhOxvNBBQ0hYpaKLEShBQWYiMQwc4qhYV/3M7GRoUFtRA2y/obBtmRPXme/oO3O3eY6fTJ5W4A...' ;
+document.querySelectorAll('.brand img').forEach(img=>{img.src=logoData;img.alt='Corporate Saving Solutions';});
+document.querySelectorAll('.footer-brand img').forEach(img=>img.remove());
+const toggle=document.querySelector('.nav-toggle');if(toggle){toggle.addEventListener('click',()=>{document.body.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',document.body.classList.contains('menu-open')?'true':'false');});}
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('in-view');}),{threshold:.12});document.querySelectorAll('.service-tile,.service-card,.section-intro-row,.statement-grid,.image-story-copy,.conversion-grid').forEach(el=>observer.observe(el));
