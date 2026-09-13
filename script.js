@@ -1,3 +1,8 @@
+const refreshStyles=document.createElement('link');
+refreshStyles.rel='stylesheet';
+refreshStyles.href='refresh.css';
+document.head.appendChild(refreshStyles);
+
 const cssLogo='https://raw.githubusercontent.com/jfielderon/CSS-UK/main/public/css-logo.png';
 document.querySelectorAll('.brand img').forEach(img=>{img.src=cssLogo;img.alt='Corporate Saving Solutions';});
 document.querySelectorAll('.footer-brand img').forEach(img=>img.remove());
