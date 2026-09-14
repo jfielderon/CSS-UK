@@ -1,5 +1,5 @@
 {
-  "buildCommand": "rm -rf dist && mkdir -p dist/public && cp *.html *.css *.js dist/ && cp -r public/* dist/public/",
+  "buildCommand": "rm -rf dist && mkdir -p dist/public && cp *.html *.css *.js dist/ && cp -r public/* dist/public/ && base64 -d public/css-logo-final.b64 > dist/public/css-logo.png",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
