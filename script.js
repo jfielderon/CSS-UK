@@ -1,5 +1,5 @@
 document.querySelectorAll('.brand').forEach(brand=>{
-  brand.innerHTML='<img class="brand-logo" src="/public/css-logo-direct.webp?v=20260914a" alt="Corporate Saving Solutions" loading="eager" decoding="async">';
+  brand.innerHTML='<img class="brand-logo" src="/public/css-logo.png?v=20260914c" alt="Corporate Saving Solutions" loading="eager" decoding="async">';
   brand.setAttribute('aria-label','Corporate Saving Solutions');
 });
 
