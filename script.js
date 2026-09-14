@@ -1,5 +1,7 @@
 document.querySelectorAll('.brand').forEach(brand=>{
   brand.setAttribute('aria-label','Corporate Saving Solutions');
+  const logo=brand.querySelector('img');
+  if(logo) logo.src='/public/css-logo.png?v=20260914f';
 });
 
 document.querySelectorAll('.footer-brand img').forEach(img=>img.remove());
