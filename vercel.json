@@ -1,5 +1,5 @@
 {
-  "buildCommand": "rm -rf dist && mkdir -p dist/public && cp *.html *.css *.js dist/ && cp -r public/* dist/public/ && base64 -d public/css-logo-final.b64 > dist/public/css-logo.png",
+  "buildCommand": "rm -rf dist && mkdir -p dist/public && cp *.html *.css *.js dist/ && cp -r public/* dist/public/ && node -e \"const fs=require('fs');const s=fs.readFileSync('public/css-logo-final.b64','utf8').replace(/\\s+/g,'');fs.writeFileSync('dist/public/css-logo.png',Buffer.from(s,'base64'));\"",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
