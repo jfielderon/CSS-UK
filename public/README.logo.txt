@@ -1,0 +1,1 @@
+Do not edit logo assets via text APIs.
