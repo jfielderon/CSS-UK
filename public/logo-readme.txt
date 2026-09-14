@@ -1,0 +1,1 @@
+Final CSS logo binary stored via Git tree in subsequent commit.
